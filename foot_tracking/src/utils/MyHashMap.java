@@ -124,19 +124,5 @@ public class MyHashMap<K, V> {
 		return hashcode & DEFAULT_SIZE-1;
 	}
 	
-	public static void main(String[] args) {
-		MyHashMap<String, String> map = new MyHashMap<>();
-		map.put("1", "a");
-		map.put("2", "b");
-		map.put("3", "c");
-		System.out.println(map);
-		System.out.println(map.get("1"));
-		System.out.println(map.get("4"));
-		map.remove("1");
-		System.out.println(map);
-		System.out.println(map.get("1"));
-		
-	}
-	
 
 }

@@ -89,28 +89,4 @@ public class MyArrayList<E> {
 		return sb.toString();
 	}
 	
-	public static void main(String[] args) {
-		MyArrayList<String> myList = new MyArrayList<>();
-		myList.add("a");
-		myList.add("b");
-		myList.add("c");
-		System.out.println(myList.size());
-		System.out.println(myList);
-		myList.add(0, "c");
-		System.out.println(myList);
-		myList.add(1, "d");
-		System.out.println(myList);
-		myList.add(myList.size(), "e");
-		System.out.println(myList);
-		myList.delete("d");
-		System.out.println(myList);
-		myList.delete(0);
-		System.out.println(myList);
-		myList.delete(myList.size()-1);
-		System.out.println(myList);
-		System.out.println(myList.contains("a"));
-	}
-	
-	
-	
 }
