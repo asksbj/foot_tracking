@@ -1,3 +1,5 @@
+package mapreduce;
+
 import java.io.*;
 import java.util.StringTokenizer;
 import java.io.File;
@@ -18,7 +20,10 @@ public class footmain {
 		String output = args[1];
 		//String startDate = args[2];
 		//String endDate = args[3];
+		
 		File file = new File("/usr/footprint/userloc/test.txt");
+		InputStream is = null;
+		OutputStream os = null;
 		try{
 			FileInputStream out = new FileInputStream(file);  
 	        InputStreamReader isr = new InputStreamReader(out);
@@ -34,13 +39,13 @@ public class footmain {
 				Configuration conf = new Configuration();
                 FileSystem fs = FileSystem.get(URI.create(uri), conf);
 				try {
-					InputStream is=fs.open(new Path(uri));
+					is=fs.open(new Path(uri));
 				    String datapath = "data"+userid;
-					FileOutputStream fos = new FileOutputStream(new File("/usr/footprint/data/"+datapath));
-                    IOUtils.copyBytes(is, fos,2048, true);
+				    os = new FileOutputStream(new File("/usr/footprint/data/"+datapath));
+                    IOUtils.copyBytes(is, os,2048, true);
                 } finally {	
                     IOUtils.closeStream(is);
-                    IOUtils.closeStream(fos);
+                    IOUtils.closeStream(os);
                 }
 	        }
 		}

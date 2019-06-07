@@ -1,3 +1,5 @@
+package mapreduce;
+
 //package project;
 
 import java.io.IOException;
